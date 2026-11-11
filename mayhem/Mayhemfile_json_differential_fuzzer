@@ -1,0 +1,10 @@
+project: savantenvs/ultrajson
+target: json-differential-fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/json-differential-fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/json_differential_fuzzer
+    libfuzzer: true
+    timeout: 10
+    dictionary: /mayhem/mayhem/json-differential-fuzzer/json-differential-fuzzer.dict

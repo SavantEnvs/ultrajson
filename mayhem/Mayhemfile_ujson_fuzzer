@@ -1,0 +1,10 @@
+project: savantenvs/ultrajson
+target: ujson-fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/ujson-fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/ujson_fuzzer
+    libfuzzer: true
+    timeout: 10
+    dictionary: /mayhem/mayhem/ujson-fuzzer/ujson-fuzzer.dict
